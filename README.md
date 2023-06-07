@@ -47,42 +47,93 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-/* write all the steps invloved */
+### STEP 1:
+
+Open the quartus 2 software give the file name to write the program
+
+### STEP 2:
+
+Declare input and output variable throuugh module and filename
+
+### STEP 3:
+
+Now,declare input,output and wire variables.
+
+### STEP 4:
+
+For multiplexer we use 2 not gate,4 and gate and 1 or gate which is output. similary, for demultiplexer we use 2 not gate and 4 and gate which is output.
+
+### STEP 5:
+
+After completing program , we have to end program by using endmodule command which is used in verilog.
+
+### STEP 6:
+
+Now we can save and run the porgram.
+
+### PROGRAM
+Program for flipflops and verify its truth table in quartus using Verilog programming.
+
+Developed by:YUVABHARATHI.B
+
+RegisterNumber:212222230181
+
+### MULTIPLEXER
+```
+module de (s0,s1,a0,a1,a2,a3,y);
+input s0,s1,a0,a1,a2,a3;
+output y;
+wire a,b,c,d,s0bar,s1bar;
+not(s0bar,s0);
+not(s1bar,s1);
+and(a,s0,s1,a3);
+and(b,s1,s0bar,a2);
+and(c,s0,s1bar,a1);
+and(d,s0bar,s1bar,a0);
+or(y,a,b,c,d);
+endmodule
+```
+### DEMULTIPLEXER
+```
+module ff(s0,s1,i,y0,y1,y2,y3);
+input i,s0,s1;
+output y0,y1,y2,y3;
+wire s0bar,s1bar;
+not(s0bar,s0);
+not(s1bar,s1);
+and(y3,s1,s0,i);
+and(y2,s0bar,s1,i);
+and(y1,s1bar,s0,i);
+and(y0,s0bar,s1bar,i);
+endmodule
+```
+### RTL LOGIC
+### MULTIPLEXER
+![image](https://github.com/yuvabharathib/Exercise-07-Multiplexer-and-De-multiplexer/assets/113497404/f6a8d290-7285-4c95-9ae3-ec051b38c14a)
+
+
+### DEMULTIPLEXER
+![image](https://github.com/yuvabharathib/Exercise-07-Multiplexer-and-De-multiplexer/assets/113497404/373c389c-a3be-4ede-a218-7b7264296a0a)
+
+
+### TIMING DIGRAMS
+### MULTIPLEXER
+![image](https://github.com/yuvabharathib/Exercise-07-Multiplexer-and-De-multiplexer/assets/113497404/90e7131e-22c5-496b-ad8a-f68f4c70d117)
+
+
+### DEMULTIPLEXER
+![image](https://github.com/yuvabharathib/Exercise-07-Multiplexer-and-De-multiplexer/assets/113497404/251be3a7-a29d-422e-843d-bef3c86d2510)
 
 
 
-### PROGRAM 
-/*
-Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+### TRUTH TABLE
+### MULTIPLEXER
+![image](https://github.com/yuvabharathib/Exercise-07-Multiplexer-and-De-multiplexer/assets/113497404/b25bfb89-d1ff-49e8-87d4-f6b0a771470c)
 
 
+### DEMULTIPLEXER
+![image](https://github.com/yuvabharathib/Exercise-07-Multiplexer-and-De-multiplexer/assets/113497404/fce6eec1-6b45-4e0f-8a87-b38bd796fdec)
 
 
-
-
-### RTL LOGIC  
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
-
-### RESULTS 
+### RESULTS
+Therefore multiplexer and demultiplexer is executed successfully.
